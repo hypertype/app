@@ -1,0 +1,44 @@
+{
+  "name": "@hypertype/app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {
+    "build": "tsc -b --watch",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hypertype/app.git"
+  },
+  "files": [
+    "dist",
+    "tsconfig.json"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hypertype/app/issues"
+  },
+  "homepage": "https://github.com/hypertype/app#readme",
+  "directories": {
+    "test": "tests"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "globals": {
+      "ts-jest": {
+        "tsConfig": "tests/tsconfig.json"
+      }
+    }
+  },
+  "bundleDependencies": [
+  ],
+  "dependencies": {
+    "@hypertype/core": "latest"
+  },
+  "devDependencies": {
+    "@hypertype/tools": "latest"
+  }
+}
