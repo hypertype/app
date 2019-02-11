@@ -1,6 +1,6 @@
 {
   "name": "@hypertype/app",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.ts",
   "scripts": {
@@ -40,7 +40,9 @@
     "@hypertype/infr": "^1.1.0",
     "@hypertype/ui": "^1.0.1",
     "@types/node": "^10.12.24",
-    "redux": "latest"
+    "redux": "latest",
+    "router5": "latest",
+    "router5-plugin-browser": "latest"
   },
   "devDependencies": {
     "@hypertype/tools": "latest",
