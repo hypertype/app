@@ -1,8 +1,9 @@
 {
   "name": "@hypertype/app",
-  "version": "1.1.0",
+  "version": "1.1.3",
   "description": "",
-  "main": "index.ts",
+  "main": "./dist/esm/index.js",
+  "typings": "./dist/typings/index.d.ts",
   "scripts": {
     "build": "tsc -b --watch",
     "test": "jest"
@@ -33,7 +34,12 @@
       }
     }
   },
-  "bundleDependencies": [],
+  "bundleDependencies": [
+    "redux",
+    "router5",
+    "router5-plugin-browser",
+    "redux-devtools-extension"
+  ],
   "dependencies": {
     "@hypertype/core": "^1.2.2",
     "@hypertype/domain": "^1.0.0",
