@@ -5,10 +5,29 @@
     "outDir": "./dist/esm",
     "declarationDir": "./dist/typings",
     "noEmitOnError": true,
-    "composite": true
+    "composite": true,
+    "paths": {
+      "@hypertype/core": ["../core"],
+      "@hypertype/ui": ["../ui"],
+      "@hypertype/infr": ["../infr"]
+    },
+    "types":  [
+      "node"
+    ]
   },
   "include": [
     "**/*.ts"
+  ],
+  "references": [
+    {
+      "path": "../core"
+    },
+    {
+      "path": "../ui"
+    },
+    {
+      "path": "../infr"
+    }
   ],
   "exclude": [
     "tests",
