@@ -35,9 +35,15 @@
   },
   "bundleDependencies": [],
   "dependencies": {
-    "@hypertype/core": "latest"
+    "@hypertype/core": "^1.2.2",
+    "@hypertype/domain": "^1.0.0",
+    "@hypertype/infr": "^1.1.0",
+    "@hypertype/ui": "^1.0.1",
+    "@types/node": "^10.12.24",
+    "redux": "latest"
   },
   "devDependencies": {
-    "@hypertype/tools": "latest"
+    "@hypertype/tools": "latest",
+    "redux-devtools-extension": "latest"
   }
 }
