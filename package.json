@@ -2,9 +2,11 @@
   "name": "@hypertype/app",
   "version": "1.2.3",
   "description": "",
-  "main": "dist/esm/index.js",
+  "module": "dist/esm/index.js",
+  "main": "dist/bundle/index.js",
   "typings": "dist/typings/index.d.ts",
   "scripts": {
+    "bundle": "hypertype",
     "build": "tsc -b --watch",
     "deploy": "npm version patch && npm publish",
     "test": "jest"
@@ -53,7 +55,8 @@
     "@hypertype/ui": "^1.0.1"
   },
   "devDependencies": {
+    "@hypertype/tools": "^1.0.12",
     "@types/node": "^10.12.24",
-    "@hypertype/tools": "latest"
+    "redux-devtools-extension": "^2.13.8"
   }
 }
