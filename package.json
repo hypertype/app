@@ -35,19 +35,25 @@
       }
     }
   },
-  "bundleDependencies": [],
+  "bundleDependencies": [
+    "redux",
+    "router5",
+    "router5-plugin-browser"
+  ],
   "dependencies": {
-    "@hypertype/core": "^1.2.2",
-    "@hypertype/domain": "^1.0.0",
-    "@hypertype/infr": "^1.1.0",
-    "@hypertype/ui": "^1.0.1",
-    "@types/node": "^10.12.24",
     "redux": "latest",
     "router5": "latest",
     "router5-plugin-browser": "latest"
   },
+  "peerDependencies": {
+    "redux-devtools-extension": "latest",
+    "@hypertype/core": "^1.2.2",
+    "@hypertype/domain": "^1.0.0",
+    "@hypertype/infr": "^1.1.0",
+    "@hypertype/ui": "^1.0.1"
+  },
   "devDependencies": {
-    "@hypertype/tools": "latest",
-    "redux-devtools-extension": "latest"
+    "@types/node": "^10.12.24",
+    "@hypertype/tools": "latest"
   }
 }
