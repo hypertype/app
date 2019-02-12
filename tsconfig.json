@@ -3,6 +3,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "outDir": "./dist/esm",
+    "target": "es5",
     "declarationDir": "./dist/typings",
     "noEmitOnError": true,
     "composite": true,
