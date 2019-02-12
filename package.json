@@ -5,6 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "build": "tsc -b --watch",
+    "deploy": "npm version patch && npm publish",
     "test": "jest"
   },
   "repository": {
