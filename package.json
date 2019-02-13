@@ -58,8 +58,8 @@
     "@hypertype/core": "^1.2.2",
     "@hypertype/domain": "^1.0.0",
     "@hypertype/infr": "^1.1.0",
+    "@hypertype/tools": "^1.0.18",
     "@hypertype/ui": "^1.0.1",
-    "@hypertype/tools": "^1.0.12",
     "@types/node": "^10.12.24",
     "redux-devtools-extension": "^2.13.8"
   }
