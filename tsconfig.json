@@ -8,9 +8,9 @@
     "noEmitOnError": true,
     "composite": true,
     "paths": {
-      "@hypertype/core": ["../core"],
-      "@hypertype/ui": ["../ui"],
-      "@hypertype/infr": ["../infr"]
+//      "@hypertype/core": ["../core"],
+//      "@hypertype/ui": ["../ui"],
+//      "@hypertype/infr": ["../infr"]
     },
     "types":  [
       "node"
@@ -20,15 +20,15 @@
     "**/*.ts"
   ],
   "references": [
-    {
-      "path": "../core"
-    },
-    {
-      "path": "../ui"
-    },
-    {
-      "path": "../infr"
-    }
+//    {
+//      "path": "../core"
+//    },
+//    {
+//      "path": "../ui"
+//    },
+//    {
+//      "path": "../infr"
+//    }
   ],
   "exclude": [
     "tests",
