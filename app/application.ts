@@ -4,9 +4,13 @@ import {RootStore} from "../store";
 
 export class Application {
 
-    constructor(container: Container, rootStore: RootStore) {
+    constructor(private container: Container, rootStore: RootStore) {
         init(container);
         rootStore.createStore()
     }
 
+
+    public get<T>(type){
+        return this.container.get<T>(type);
+    }
 }
