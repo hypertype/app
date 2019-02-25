@@ -2,8 +2,8 @@ import {Container} from "@hypertype/core";
 import {IRouterOptions, Router} from "./router";
 import {Application} from "./application";
 import {RootStore, Store} from "../store";
-import {AppRootStore} from "./app-root.store";
 import {Logger} from "./logger";
+import {StateLogger} from "@hypertype/infr";
 
 export class ApplicationBuilder {
 
@@ -12,7 +12,7 @@ export class ApplicationBuilder {
     public static build(): Application {
         this.container.provide([
             // {provide: AppRoot, multiple: true},
-            {provide: RootStore, useClass: AppRootStore},
+            {provide: RootStore, useClass: RootStore, deps: [StateLogger]},
             {provide: Application, deps: [Container, RootStore]},
             {provide: Router, deps: [IRouterOptions]},
             {provide: Logger}

@@ -55,12 +55,12 @@
     "@hypertype/ui": "^1.0.1"
   },
   "devDependencies": {
-    "@hypertype/core": "^1.2.2",
-    "@hypertype/domain": "^1.0.0",
-    "@hypertype/infr": "^1.1.0",
+    "@hypertype/core": "^1.2.6",
+    "@hypertype/domain": "^1.2.10",
+    "@hypertype/infr": "^1.2.7",
     "@hypertype/tools": "^1.0.18",
-    "@hypertype/ui": "^1.0.1",
-    "@types/node": "^10.12.24",
+    "@hypertype/ui": "^1.2.8",
+    "@types/node": "^10.12.27",
     "redux-devtools-extension": "^2.13.8"
   }
 }
