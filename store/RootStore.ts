@@ -13,7 +13,6 @@ import {
 } from "@hypertype/core"
 import {BaseStore} from './BaseStore';
 import {Store} from "./store";
-import {composeWithDevTools} from "redux-devtools-extension";
 
 /**
  * Created by xamidylin on 20.06.2017.
@@ -25,7 +24,7 @@ export class RootStore extends ObservableStore<any> {
     constructor(store: Store<any>, useDevTools = false) {
         super(null, null);
         this.store = store;
-        this.compose = useDevTools ? composeWithDevTools : Fn.I;
+        this.compose = useDevTools ? require('redux-devtools-extension') : Fn.I;
     }
 
     private _epicRegistrator;
