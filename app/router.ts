@@ -13,9 +13,8 @@ export class Router {
     public Actions: {
         [K in keyof IRouteActions]: (...args: any[]) => void;
     } = {
-        navigate(route: string) {
-            console.log(route)
-            this.router.navigate(route);
+        navigate: (route: string, params: any) => {
+            this.router.navigate(route, params);
         }
     };
 
@@ -23,11 +22,10 @@ export class Router {
         this.router = createRouter(routerInit.routes, routerInit.options);
         this.router.usePlugin(browserPlugin());
         this.router.start();
-        this.State$ = new Observable(subscr => {
-            this.router.subscribe(change => subscr.next(change.route))
+        this.State$ = new Observable<RouterState>(subscr => {
+            this.router.subscribe(change => subscr.next(change.route as RouterState))
         }).pipe(
-            startWith(this.router.getState()),
-            tap(console.warn)
+            startWith(this.router.getState() as RouterState),
         );
     }
 }
