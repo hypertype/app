@@ -43,10 +43,6 @@
     "router5-plugin-browser"
   ],
   "dependencies": {
-    "@hypertype/core": "latest",
-    "@hypertype/domain": "latest",
-    "@hypertype/infr": "latest",
-    "@hypertype/ui": "latest",
     "redux": "latest",
     "router5": "latest",
     "router5-plugin-browser": "latest"
