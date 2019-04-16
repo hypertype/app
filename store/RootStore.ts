@@ -18,7 +18,7 @@ import {StateLogger} from '@hypertype/infr';
  * Created by xamidylin on 20.06.2017.
  */
 export class RootStore extends ObservableStore<any> {
-    protected store: Store<any> = new Store();
+    protected store: Store<any> = new Store(this.stateLogger);
 
     constructor(private stateLogger: StateLogger) {
         super(null, null);

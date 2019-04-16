@@ -1,6 +1,7 @@
-import {Container} from "@hypertype/core";
+import {Container, Injectable} from "@hypertype/core";
 import {init} from "@hypertype/ui";
 
+@Injectable()
 export class Application {
 
     constructor(private container: Container) {
