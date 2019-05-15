@@ -1,17 +1,12 @@
 import {createStore, Store as ReduxStore} from 'redux';
 import {Observable} from "@hypertype/core";
-import {StateLogger} from '@hypertype/infr';
 
 export class Store<TState> {
-    constructor(private stateLogger: StateLogger) {
-
-    }
 
     private store: ReduxStore;
 
     dispatch(action) {
         this.store.dispatch(action);
-        this.stateLogger.send(action, this.getState())
     }
 
     provide(reducer, initState, middlewares) {

@@ -18,7 +18,7 @@ import {StateLogger} from '@hypertype/infr';
  * Created by xamidylin on 20.06.2017.
  */
 export class RootStore extends ObservableStore<any> {
-    protected store: Store<any> = new Store(this.stateLogger);
+    protected store: Store<any> = new Store();
 
     constructor(private stateLogger: StateLogger) {
         super(null, null);
@@ -66,7 +66,6 @@ export class RootStore extends ObservableStore<any> {
 
     public dispatch(a) {
         const res = this.store.dispatch(a);
-        this.stateLogger.send(a, this.getState());
         return res;
     }
 
@@ -76,6 +75,7 @@ export class RootStore extends ObservableStore<any> {
 
     public getLogMiddleware() {
         return store => next => action => {
+            this.stateLogger.send(action, store.getState());
             // global['actions'] = [action, ...(global['actions'] || [])];
             // global['state'] = store.getState();
             return next(action);
