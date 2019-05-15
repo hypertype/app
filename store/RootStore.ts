@@ -75,10 +75,11 @@ export class RootStore extends ObservableStore<any> {
 
     public getLogMiddleware() {
         return store => next => action => {
+            const result = next(action);
             this.stateLogger.send(action, store.getState());
             // global['actions'] = [action, ...(global['actions'] || [])];
             // global['state'] = store.getState();
-            return next(action);
+            return result;
         };
     }
 
