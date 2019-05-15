@@ -1,11 +1,14 @@
 {
   "name": "@hypertype/app",
-  "version": "1.2.0",
+  "version": "2.0.4",
   "description": "",
-  "main": "./dist/esm/index.js",
-  "typings": "./dist/typings/index.d.ts",
+  "main": "dist/esm/index.js",
+  "bundle": "dist/bundle/index.js",
+  "typings": "dist/typings/index.d.ts",
   "scripts": {
+    "bundle": "hypertype",
     "build": "tsc -b --watch",
+    "deploy": "npm version patch && npm publish",
     "test": "jest"
   },
   "repository": {
@@ -37,21 +40,28 @@
   "bundleDependencies": [
     "redux",
     "router5",
-    "router5-plugin-browser",
-    "redux-devtools-extension"
+    "router5-plugin-browser"
   ],
   "dependencies": {
-    "@hypertype/core": "^1.2.2",
-    "@hypertype/domain": "^1.0.0",
-    "@hypertype/infr": "^1.1.0",
-    "@hypertype/ui": "^1.0.1",
-    "@types/node": "^10.12.24",
     "redux": "latest",
     "router5": "latest",
     "router5-plugin-browser": "latest"
   },
+  "peerDependencies": {
+    "redux-devtools-extension": "latest",
+    "@hypertype/core": "latest",
+    "@hypertype/domain": "latest",
+    "@hypertype/infr": "latest",
+    "@hypertype/ui": "latest"
+  },
   "devDependencies": {
     "@hypertype/tools": "latest",
-    "redux-devtools-extension": "latest"
+    "@types/node": "^10.12.27",
+    "redux-devtools-extension": "^2.13.8"
+  },
+  "hypertype": {
+    "lib": {
+      "index": "index.ts"
+    }
   }
 }

@@ -1,12 +1,15 @@
-import {Container} from "@hypertype/core";
+import {Container, Injectable} from "@hypertype/core";
 import {init} from "@hypertype/ui";
-import {RootStore} from "../store";
 
+@Injectable()
 export class Application {
 
-    constructor(container: Container, rootStore: RootStore) {
+    constructor(private container: Container) {
         init(container);
-        rootStore.createStore()
     }
 
+
+    public get<T>(type){
+        return this.container.get<T>(type);
+    }
 }

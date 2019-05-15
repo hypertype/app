@@ -1,4 +1,4 @@
-import createRouter, {Options, Route, RouteNode, Router as Router5} from 'router5';
+import createRouter, {Options, Route, RouteNode, Router as Router5, State as RouterState} from 'router5';
 import * as browserPlugin from 'router5-plugin-browser/dist';
 import {Observable, startWith, tap} from "@hypertype/core";
 
@@ -8,28 +8,25 @@ export class IRouterOptions {
 }
 
 export class Router {
+    public State$: Observable<RouterState>;
     private router: Router5;
-
-    constructor(routerInit: IRouterOptions){
-        this.router = createRouter(routerInit.routes, routerInit.options);
-        this.router.usePlugin(browserPlugin());
-        this.router.start();
-    }
-
-    public State$ = new Observable(subscr => {
-        this.router.subscribe(change => subscr.next(change.route))
-    }).pipe(
-        startWith(this.router.getState()),
-        tap(console.warn)
-    );
-
     public Actions: {
         [K in keyof IRouteActions]: (...args: any[]) => void;
     } = {
-        navigate(route: string) {
-            console.log(route)
-            this.router.navigate(route);
+        navigate: (route: string, params: any) => {
+            this.router.navigate(route, params);
         }
+    };
+
+    constructor(routerInit: IRouterOptions) {
+        this.router = createRouter(routerInit.routes, routerInit.options);
+        this.router.usePlugin(browserPlugin());
+        this.router.start();
+        this.State$ = new Observable<RouterState>(subscr => {
+            this.router.subscribe(change => subscr.next(change.route as RouterState))
+        }).pipe(
+            startWith(this.router.getState() as RouterState),
+        );
     }
 }
 

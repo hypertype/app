@@ -13,19 +13,15 @@ import {
 } from "@hypertype/core"
 import {BaseStore} from './BaseStore';
 import {Store} from "./store";
-import {composeWithDevTools} from "redux-devtools-extension";
-
+import {StateLogger} from '@hypertype/infr';
 /**
  * Created by xamidylin on 20.06.2017.
  */
 export class RootStore extends ObservableStore<any> {
-    protected store: Store<any>;
-    private compose: any;
+    protected store: Store<any> = new Store();
 
-    constructor(store: Store<any>, useDevTools = false) {
+    constructor(private stateLogger: StateLogger) {
         super(null, null);
-        this.store = store;
-        this.compose = useDevTools ? composeWithDevTools : Fn.I;
     }
 
     private _epicRegistrator;
@@ -58,7 +54,7 @@ export class RootStore extends ObservableStore<any> {
         const epicMiddleware = createEpicMiddleware();
         this.store.provide(this.combinedReducer,
             state,
-            this.compose(applyMiddleware(
+            (applyMiddleware(
                 epicMiddleware,
                 this.getLogMiddleware(),
                 ...this.getOtherMiddlewares()))
@@ -68,8 +64,9 @@ export class RootStore extends ObservableStore<any> {
         return this.store;
     }
 
-    public dispatch<A extends Action>(a: A) {
-        return this.store.dispatch(a);
+    public dispatch(a) {
+        const res = this.store.dispatch(a);
+        return res;
     }
 
     public getState() {
@@ -78,9 +75,11 @@ export class RootStore extends ObservableStore<any> {
 
     public getLogMiddleware() {
         return store => next => action => {
+            const result = next(action);
+            this.stateLogger.send(action, store.getState());
             // global['actions'] = [action, ...(global['actions'] || [])];
             // global['state'] = store.getState();
-            return next(action);
+            return result;
         };
     }
 

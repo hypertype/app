@@ -2,6 +2,7 @@ import {createStore, Store as ReduxStore} from 'redux';
 import {Observable} from "@hypertype/core";
 
 export class Store<TState> {
+
     private store: ReduxStore;
 
     dispatch(action) {
