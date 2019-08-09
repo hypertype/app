@@ -37,27 +37,28 @@
       }
     }
   },
-  "bundleDependencies": [
+  "bundledDependencies": [
     "redux",
     "router5",
     "router5-plugin-browser"
   ],
   "dependencies": {
-    "redux": "latest",
-    "router5": "latest",
-    "router5-plugin-browser": "latest"
+  },
+  "optionalDependencies": {
+    "redux-devtools-extension": "latest"
   },
   "peerDependencies": {
-    "redux-devtools-extension": "latest",
     "@hypertype/core": "latest",
     "@hypertype/domain": "latest",
     "@hypertype/infr": "latest",
     "@hypertype/ui": "latest"
   },
   "devDependencies": {
+    "redux": "latest",
+    "router5": "latest",
+    "router5-plugin-browser": "latest",
     "@hypertype/tools": "latest",
-    "@types/node": "^10.12.27",
-    "redux-devtools-extension": "^2.13.8"
+    "@types/node": "^10.12.27"
   },
   "hypertype": {
     "lib": {
