@@ -1,6 +1,6 @@
 {
   "name": "@hypertype/app",
-  "version": "2.0.4",
+  "version": "2.0.5",
   "description": "",
   "main": "dist/esm/index.js",
   "bundle": "dist/bundle/index.js",
@@ -42,8 +42,7 @@
     "router5",
     "router5-plugin-browser"
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "optionalDependencies": {
     "redux-devtools-extension": "latest"
   },
