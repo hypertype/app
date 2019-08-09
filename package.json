@@ -6,7 +6,8 @@
   "bundle": "dist/bundle/index.js",
   "typings": "dist/typings/index.d.ts",
   "scripts": {
-    "bundle": "hypertype",
+    "bundle": "hypertype lib --watch",
+    "bundle:prod": "hypertype lib --prod",
     "build": "tsc -b --watch",
     "deploy": "npm version patch && npm publish",
     "test": "jest"
@@ -48,20 +49,22 @@
   },
   "peerDependencies": {
     "@hypertype/core": "latest",
-    "@hypertype/domain": "latest",
     "@hypertype/infr": "latest",
     "@hypertype/ui": "latest"
   },
   "devDependencies": {
+    "@hypertype/tools": "^2.0.6",
+    "@hypertype/core": "latest",
+    "@hypertype/infr": "latest",
+    "@hypertype/ui": "latest",
+    "@types/node": "^10.12.27",
     "redux": "latest",
     "router5": "latest",
-    "router5-plugin-browser": "latest",
-    "@hypertype/tools": "latest",
-    "@types/node": "^10.12.27"
+    "router5-plugin-browser": "latest"
   },
   "hypertype": {
     "lib": {
-      "index": "index.ts"
+      "index": "./dist/esm/index.js"
     }
   }
 }
