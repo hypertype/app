@@ -1,4 +1,4 @@
-import {Container, Injectable} from "@hypertype/core";
+import {Container, Injectable, Provider} from "@hypertype/core";
 import {init} from "@hypertype/ui";
 
 @Injectable()
@@ -10,6 +10,10 @@ export class Application {
 
     public Init(){
         init(this.container);
+    }
+
+    public Provide(provider: Provider){
+        this.container.provide(provider);
     }
 
     public get<T>(type){
