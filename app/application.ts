@@ -12,8 +12,8 @@ export class Application {
         init(this.container);
     }
 
-    public Provide(provider: Provider){
-        this.container.provide(provider);
+    public Provide(...providers: Provider[]){
+        this.container.provide(providers);
     }
 
     public get<T>(type){
