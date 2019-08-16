@@ -5,9 +5,12 @@ import {init} from "@hypertype/ui";
 export class Application {
 
     constructor(private container: Container) {
-        init(container);
     }
 
+
+    public Init(){
+        init(this.container);
+    }
 
     public get<T>(type){
         return this.container.get<T>(type);
