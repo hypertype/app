@@ -1,6 +1,6 @@
 import createRouter, {Options, Route, RouteNode, Router as Router5, State as RouterState} from 'router5';
 import * as browserPlugin from 'router5-plugin-browser/dist';
-import {Observable, startWith, tap} from "@hypertype/core";
+import {Observable, startWith} from "@hypertype/core";
 
 export class IRouterOptions {
     routes: Route[] | RouteNode;
@@ -32,4 +32,8 @@ export class Router {
 
 export interface IRouteActions {
     navigate(route: string);
+}
+
+export {
+    RouterState
 }
